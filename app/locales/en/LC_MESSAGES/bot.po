@@ -18,6 +18,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
+
+
+
+
+#: app/bot/routers/profile/keyboard.py:28
+msgid "profile:button:routing"
+msgstr "🚴 Routing for RU sites"
+
+
+
+
+
 #: app/bot/middlewares/maintenance.py:45
 msgid "maintenance:ntf:try_later"
 msgstr "🚧 <i>The bot is in maintenance mode. Please try again later.</i>"
