@@ -35,6 +35,5 @@ def profile_keyboard() -> InlineKeyboardMarkup:
             callback_data=NavDownload.MAIN,
         )
     )
-
     builder.row(back_to_main_menu_button())
     return builder.as_markup()

@@ -11,6 +11,7 @@ from app.bot.utils.constants import (
     APP_WINDOWS_LINK,
     APP_WINDOWS_SCHEME,
     CONNECTION_WEBHOOK,
+    APP_ROUTING,
 )
 from app.bot.utils.navigation import NavDownload, NavMain, NavSubscription, NavSupport
 
@@ -49,15 +50,17 @@ def download_keyboard(platform: NavDownload, url: str, key: str) -> InlineKeyboa
         case NavDownload.PLATFORM_IOS:
             scheme = APP_IOS_SCHEME
             download = APP_IOS_LINK
+            rlink = APP_ROUTING
         case NavDownload.PLATFORM_ANDROID:
             scheme = APP_ANDROID_SCHEME
             download = APP_ANDROID_LINK
+            rlink = APP_ROUTING
         case _:
             scheme = APP_WINDOWS_SCHEME
             download = APP_WINDOWS_LINK
-
+            rlink = APP_ROUTING
     connect = f"{url}{CONNECTION_WEBHOOK}?scheme={scheme}&key={key}"
-
+    routing = f"https://s.anp-service.ru/routing{CONNECTION_WEBHOOK}?scheme={rlink}"
     builder.button(text=_("download:button:download"), url=download)
 
     builder.button(
@@ -65,6 +68,10 @@ def download_keyboard(platform: NavDownload, url: str, key: str) -> InlineKeyboa
         url=connect if key else None,
         callback_data=NavSubscription.MAIN if not key else None,
     )
+
+
+    builder.row(InlineKeyboardButton(text=_("profile:button:routing"), url=routing))
+
 
     builder.row(back_button(NavDownload.MAIN))
     return builder.as_markup()

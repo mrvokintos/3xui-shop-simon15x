@@ -6,7 +6,9 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
 from app.bot.utils.constants import TransactionStatus
-from app.db.models import Transaction
+from app.db.models import Transaction, User
+from app.bot.services.vpn import VPNService
+from app.config import Config
 
 logger = logging.getLogger(__name__)
 
@@ -38,8 +40,7 @@ async def cancel_expired_transactions(
         else:
             logger.info("[Background check] No expired transactions found.")
 
-
-def start_scheduler(session: async_sessionmaker) -> None:
+def start_scheduler(session: async_sessionmaker, config: Config, vpn_service: VPNService = None) -> None:
     scheduler = AsyncIOScheduler()
     scheduler.add_job(
         cancel_expired_transactions,

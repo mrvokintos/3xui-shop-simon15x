@@ -41,7 +41,8 @@ DEFAULT_SHOP_PAYMENT_HELEKET_ENABLED = False
 DEFAULT_SHOP_PAYMENT_YOOKASSA_ENABLED = False
 DEFAULT_SHOP_PAYMENT_YOOMONEY_ENABLED = False
 DEFAULT_DB_NAME = "bot_database"
-
+DEFAULT_EXPIRATION_NOTIFY = 1
+DEFAULT_EXPIRED_SUBSCRIPTION_DELETION_PERIOD = 3
 DEFAULT_REDIS_DB_NAME = "0"
 DEFAULT_REDIS_HOST = "3xui-shop-redis"
 DEFAULT_REDIS_PORT = 6379
@@ -85,6 +86,8 @@ class ShopConfig:
     REFERRER_LEVEL_ONE_RATE: int
     REFERRER_LEVEL_TWO_RATE: int
     BONUS_DEVICES_COUNT: int
+    EXPIRATION_NOTIFY: int
+    EXPIRED_SUBSCRIPTION_DELETION_PERIOD: int
     PAYMENT_STARS_ENABLED: bool
     PAYMENT_CRYPTOMUS_ENABLED: bool
     PAYMENT_HELEKET_ENABLED: bool
@@ -330,6 +333,16 @@ def load_config() -> Config:
             ),
             BONUS_DEVICES_COUNT=env.int(
                 "SHOP_BONUS_DEVICES_COUNT", default=DEFAULT_SHOP_BONUS_DEVICES_COUNT
+            ),
+            EXPIRATION_NOTIFY=env.int(
+                "SHOP_EXPIRATION_NOTIFY",
+                default=DEFAULT_EXPIRATION_NOTIFY,
+                validate=Range(min=0, error="SHOP_EXPIRATION_NOTIFY must be >= 0"),
+            ),
+            EXPIRED_SUBSCRIPTION_DELETION_PERIOD=env.int(
+                "SHOP_EXPIRED_SUBSCRIPTION_DELETION_PERIOD",
+                default=DEFAULT_EXPIRED_SUBSCRIPTION_DELETION_PERIOD,
+                validate=Range(min=0, error="SHOP_EXPIRED_SUBSCRIPTION_DELETION_PERIOD must be >= 0"),
             ),
             PAYMENT_STARS_ENABLED=payment_stars_enabled,
             PAYMENT_CRYPTOMUS_ENABLED=payment_cryptomus_enabled,

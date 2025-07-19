@@ -11,6 +11,7 @@ class NavMain(str, Enum):
 class NavProfile(str, Enum):
     MAIN = "profile"
     SHOW_KEY = "show_key"
+    SHOW_ROUTING = "show_routing"
 
 
 class NavReferral(str, Enum):
