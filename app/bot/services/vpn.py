@@ -274,6 +274,8 @@ class VPNService:
                 chat_id=user.tg_id,
                 bot=bt(self.config.bot.TOKEN),
                 )
+        s = await bot.get_session()
+        await s.close()
         return True
         
     async def create_subscription(self, user: User, devices: int, duration: int) -> bool:
@@ -332,7 +334,7 @@ class VPNService:
         success = await self.process_bonus_days(
             user,
             duration=promocode.duration,
-            devices=self.config.shop.BONUS_DEVICES_COUNT,
+            devices=self.self.config.shop.BONUS_DEVICES_COUNT,
         )
 
         if success:
