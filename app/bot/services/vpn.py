@@ -332,7 +332,7 @@ class VPNService:
         success = await self.process_bonus_days(
             user,
             duration=promocode.duration,
-            devices=self.self.config.shop.BONUS_DEVICES_COUNT,
+            devices=self.config.shop.BONUS_DEVICES_COUNT,
         )
 
         if success:
