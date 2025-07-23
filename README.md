@@ -2,7 +2,7 @@
 
 
 
-Внимание! Fork! оригинальный проект    <a href="https://github.com/snoups/3xui-shop/blob/main/README.md"><u><b>snoups</b></u></a>
+Внимание! Fork! Оригинальный проект:    <a href="https://github.com/snoups/3xui-shop/blob/main/README.md"><u><b>snoups</b></u></a>
 ![3xui-shop](https://github.com/user-attachments/assets/282d10db-a355-4c65-a2cf-eb0e8ec8eed1)
 
 **Этот проект представляет собой Telegram-бота для продажи подписок на VPN. Работает с 3X-UI.**
