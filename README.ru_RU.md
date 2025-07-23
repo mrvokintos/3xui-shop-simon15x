@@ -1,10 +1,11 @@
 <div align="center" markdown>
 
 <p align="center">
-    <a href="https://github.com/snoups/3xui-shop/blob/main/README.md"><u><b>ENGLISH</b></u></a> •
-    <a href="https://github.com/snoups/3xui-shop/blob/main/README.ru_RU.md"><u><b>РУССКИЙ</b></u></a>
+    <a href="https://github.com/simon15x/3xui-shop/blob/main/README.md"><u><b>ENGLISH</b></u></a> •
+    <a href="https://github.com/simon15x/3xui-shop/blob/main/README.ru_RU.md"><u><b>РУССКИЙ</b></u></a>
 </p>
 
+Внимание! Fork! оригинальный проект    <a href="https://github.com/snoups/3xui-shop/blob/main/README.md"><u><b>snoups</b></u></a>
 ![3xui-shop](https://github.com/user-attachments/assets/282d10db-a355-4c65-a2cf-eb0e8ec8eed1)
 
 **Этот проект представляет собой Telegram-бота для продажи подписок на VPN. Работает с 3X-UI.**
@@ -107,7 +108,7 @@
 
 1. **Установка/Обновление:**
    ```bash
-   bash <(curl -Ls https://raw.githubusercontent.com/snoups/3xui-shop/main/scripts/install.sh) -q
+   bash <(curl -Ls https://raw.githubusercontent.com/simon15x/3xui-shop/main/scripts/install.sh) -q
    cd 3xui-shop
    ```
 
@@ -159,6 +160,8 @@
 | SHOP_PAYMENT_HELEKET_ENABLED | ⭕ | False | Включить оплату через Heleket |
 | SHOP_PAYMENT_YOOKASSA_ENABLED | ⭕ | False | Включить оплату через YooKassa |
 | SHOP_PAYMENT_YOOMONEY_ENABLED | ⭕ | False | Включить оплату через YooMoney |
+| SHOP_EXPIRED_SUBSCRIPTION_DELETION_PERIOD | ⭕ | 3 | Период очистки истекших пользователей |
+| SHOP_EXPIRATION_NOTIFY | ⭕ | 1 | Уведомление пользователей перед истечением подписки (за интервал дней) |
 | | | |
 | XUI_USERNAME | 🔴 | - | Имя пользователя для аутентификации в панели 3X-UI |
 | XUI_PASSWORD | 🔴 | - | Пароль для аутентификации в панели 3X-UI |
