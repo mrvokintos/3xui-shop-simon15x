@@ -52,6 +52,6 @@ def start_scheduler(session_factory: async_sessionmaker, vpn_service: VPNService
         "interval",
         hours=23,
         args=[session_factory, vpn_service, config],
-        next_run_time=datetime.now(),
+        next_run_time=datetime.now() + timedelta(hours=3),
     )
     scheduler.start()
