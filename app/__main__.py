@@ -49,12 +49,25 @@ async def on_startup(config: Config, bot: Bot, services: ServicesContainer, db: 
     await services.notification.notify_developer(BOT_STARTED_TAG)
     logging.info("Bot started.")
 
-    tasks.transactions.start_scheduler(db.session)
+    tasks.transactions.start_scheduler(db.session,config,services.vpn)
     if config.shop.REFERRER_REWARD_ENABLED:
         tasks.referral.start_scheduler(
             session_factory=db.session, referral_service=services.referral
         )
-
+        
+    # Запуск задачи очистки просроченных VPN-пользователей
+    tasks.deletion.start_scheduler(
+        db.session,
+        services.vpn,
+        config
+    )
+    
+        # Запуск задачи уведомления истекающих VPN-пользователей
+    tasks.notifying.start_scheduler(
+        db.session,
+        services.vpn,
+        config
+    )
 
 async def main() -> None:
     # Create web application
