@@ -72,7 +72,7 @@ install_dependencies() {
             sudo dnf -y update -q >/dev/null 2>&1
             sudo dnf install -y -q $packages >/dev/null 2>&1
             ;;
-        arch|manjaro|parch)
+        arch|manjaro|parch|cachyos)
             sudo pacman -Syu --noconfirm --quiet >/dev/null 2>&1
             sudo pacman -S --noconfirm --quiet $packages >/dev/null 2>&1
             ;;
