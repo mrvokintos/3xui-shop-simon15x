@@ -107,7 +107,7 @@
 
 1. **Установка/Обновление:**
    ```bash
-   bash <(curl -Ls https://raw.githubusercontent.com/simon15x/3xui-shop/main/scripts/install.sh) -q
+   bash <(curl -Ls https://raw.githubusercontent.com/mrvokintos/3xui-shop-simon15x/main/scripts/install.sh) -q
    cd 3xui-shop
    ```
 
