@@ -7,8 +7,8 @@
 
 set -e
 
-REPO_OWNER="simon15x"
-REPO_NAME="3xui-shop"
+REPO_OWNER="mrvokintos"
+REPO_NAME="3xui-shop-simon15x"
 VERSION_FILE=".version"
 TMP_DIR="/tmp/3xui-shop_update"
 BACKUP_DIR="/tmp/3xui-shop_backup"
